@@ -1,0 +1,55 @@
+﻿@page
+@model ContactModel
+@{
+
+}
+
+<h1>Lien he</h1>
+<form method="POST" asp-page="Contact" class="m-2
+    p-3 alert-warning" enctype="multipart/form-data">
+    <div asp-validation-summary="All"></div>
+    <div class="form-group">
+        <label asp-for="customerInfo.CustomerName"></label>
+        <input asp-for="customerInfo.CustomerName" class="form-control"/>
+        <span asp-validation-for="customerInfo.CustomerName"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="customerInfo.Email"></label>
+        <input asp-for="customerInfo.Email" class="form-control"/>
+        <span asp-validation-for="customerInfo.Email"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="customerInfo.YearOfBirth"></label>
+        <input asp-for="customerInfo.YearOfBirth" class="form-control"/>
+        <span asp-validation-for="customerInfo.YearOfBirth"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="FileUploader"></label>
+        <input asp-for="FileUploader" class="form-control"/>
+        <span asp-validation-for="FileUploader"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="FileUploads"></label>
+        <input asp-for="FileUploads" class="form-control"/>
+        <span asp-validation-for="FileUploads"></span>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary">Gui</button>
+    </div>
+</form>
+
+<hr>
+<p>@Model.thongbao</p>
+@if (@Model.customerInfo != null)
+{
+    <ul>
+
+        <li>Username : @Model.customerInfo.CustomerName</li>
+        <li>Email : @Model.customerInfo.Email</li>
+        <li>YearOfBirth : @Model.customerInfo.YearOfBirth</li>
+
+    </ul>
+}
+@section Scripts{
+
+}
